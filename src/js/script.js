@@ -1,18 +1,29 @@
-const FORM = document.querySelector("form");
-const FNAME = document.getElementById("fname");
-const LNAME = document.getElementById("lname");
-const ABOUT = document.getElementsById("about")
-
-FORM.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const FIRST_NAME = FNAME.value;
-  const LAST_NAME = LNAME.value;
-  const ABOUT_ME = ABOUT.value;
+function getUserData() {
+  const FORM = document.querySelector("form");
+  const FNAME = document.getElementById("fname");
+  const LNAME = document.getElementById("lname");
+  const ABOUT_ME = document.getElementById("about");
+  const LOCATION_DATA = document.getElementById("location__data");
+  const LANGUAGES_DATA = document.getElementById("languages__data");
 
 
-  console.log(`First Name: ${FIRST_NAME}`);
-  console.log(`Last Name: ${LAST_NAME}`);
-  console.log(`About Me: ${ABOUT_ME}`);
+  FORM.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const FIRST_NAME = FNAME.value;
+    const LAST_NAME = LNAME.value;
+    const ABOUT = ABOUT_ME.value;
+    const LOC_DATA = LOCATION_DATA.value;
+    const LANG_DATA = LANGUAGES_DATA.value;
 
-  // You can send this data to your backend for processing
-});
+    const dataUser = {
+      First_Name: FIRST_NAME,
+      Last_Name: LAST_NAME,
+      About_me: ABOUT,
+      Location: LOC_DATA,
+      Laguages: LANG_DATA,
+
+    }
+    return dataUser
+  });
+  console.log(dataUser)
+}
